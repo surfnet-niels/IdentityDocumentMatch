@@ -1,6 +1,4 @@
-REFEDS Assurance Framework version 2.0 Addendum
-
-IdentityDocumentMatch
+# REFEDS Assurance Framework version 2.0 Addendum - IdentityDocumentMatch
 
 Version History: V0.1
 
@@ -20,11 +18,11 @@ a Relying Party's (RP\'s) service about its confidence in the values of
 selected user attributes.
 
 This document addends RAF 2.0 by providing an additional claim a CSP may
-issue towards a RP: Identity Document Match.\
-\
+issue towards a RP: Identity Document Match.
+
 Identity Document Match allows a CSP to express how the name and date of
 birth attribute values provided to the RP relate to the information
-presented to the CSP at the time of identity validation.\
+presented to the CSP at the time of identity validation.
 
 # 2. Terms and Definitions
 
@@ -44,7 +42,6 @@ No changes
 
 This section is normative.
 
-\
 Identity Document Match allows a CSP to express how of the attribute
 values provided to the RP relate to the information presented to the CSP
 at the time of identity (re)validation.
@@ -59,7 +56,7 @@ using claims birthdate \[OIDC-core\]
 By asserting Identity Document Match name related claims, the CSP states
 the values presented in one or more of the name attributes are *an exact
 literal match* as compared to the values found on the Identity
-Evidence.\
+Evidence.
 By asserting an Identity Document Match date of birth claim, the CSP
 states the values for year, month and day are *equivalent to the values*
 as found on the Identity Evidence. To support localization, the date
@@ -73,7 +70,7 @@ identity proofing process MUST be equivalent to IAP values "medium" or
 "high" as described in RAF chapter 5.2.1, and either
 https://refeds.org/assurance/IAP/medium or
 https://refeds.org/assurance/IAP/high MUST be present in the assurance
-attributes.\
+attributes.
 If any of the attributes mentioned in this section are changed, for
 example because of changes in the persons name, the CSP MUST perform
 comparison of the Identity Evidence within 31 calender days.
@@ -82,43 +79,12 @@ To assert Identity Document Match claims in accordance with this
 specification, the CSP MUST use below <https://refeds.org/assurance/IDM>
 values. If so applicable, one or more values MAY be used in combination.
 
-+----------------------------------+----------------------------------+
-| Value                            | Description                      |
-+----------------------------------+----------------------------------+
-| https:/                          | The values presented in the      |
-| /refeds.org/assurance/IDM/name-1 | assertion of                     |
-|                                  |                                  |
-|                                  | 'givenName' and 'sn (surname)'   |
-|                                  | \[eduPerson\] or 'given_name'    |
-|                                  | and 'familiy_name' and           |
-|                                  | optionally 'middle_name'         |
-|                                  | \[OIDC-core\]\                   |
-|                                  | are identical to the values      |
-|                                  | found in the Identity Evidence   |
-|                                  | which was used to identity proof |
-|                                  | the user                         |
-+----------------------------------+----------------------------------+
-| https:/                          | The values presented in the      |
-| /refeds.org/assurance/IDM/name-2 | assertion of                     |
-|                                  |                                  |
-|                                  | 'cn (commonName)' \[eduPerson\]  |
-|                                  | or 'name' \[OIDC-core\] are      |
-|                                  | identical to the values found in |
-|                                  | the Identity Evidence which was  |
-|                                  | used to identity proof the user  |
-+----------------------------------+----------------------------------+
-| http                             | The values presented in the      |
-| s://refeds.org/assurance/IDM/dob | assertion of                     |
-|                                  |                                  |
-|                                  | 'schacDateOfBirth' \[SCHAC\] or  |
-|                                  | 'birthdate' \[OIDC-core\] are    |
-|                                  | equivalent to the values found   |
-|                                  | in the Identity Evidence which   |
-|                                  | was used to identity proof the   |
-|                                  | user                             |
-+----------------------------------+----------------------------------+
+| Value                                     | Description                      |
+|-------------------------------------------|----------------------------------|
+| https://refeds.org/assurance/IDM/name-1   | The values presented in the assertion of ‘givenName’ and ‘sn (surname)’ [eduPerson] or ‘given_name’  and ‘familiy_name’ and optionally ‘middle_name’ [OIDC-core] are identical to the values found in the  Identity Evidence which was used to identity proof the user |
+| https://refeds.org/assurance/IDM/name-2   | The values presented in the assertion of ‘cn (commonName)’ [eduPerson] or ‘name’ [OIDC-core] are identical to the values found in the  Identity Evidence which was used to identity proof the user |
+| https://refeds.org/assurance/IDM/dob | The values presented in the assertion of ‘schacDateOfBirth’ [SCHAC] or ‘birthdate’ [OIDC-core] are equivalent to the values found in the Identity Evidence which was used to identity proof the user |
 
-\
 Please note that by asserting Identity Document Match claims, the CSP
 *does not* assert any guarantee any of the names constitutes the persons
 'legal name' \[wp-legal-name\], nor in any way makes statements on how
